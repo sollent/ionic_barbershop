@@ -1,0 +1,4 @@
+#Fri May 11 01:56:01 MSK 2018
+base.0=/home/sollent98/Рабочий стол/ionic_proj/ionic_barbershop/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+file.0=/home/sollent98/Рабочий стол/ionic_proj/ionic_barbershop/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex
