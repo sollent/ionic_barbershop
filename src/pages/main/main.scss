@@ -4,4 +4,52 @@ page-main {
     top:10%;
     right:5%;
   }
+  //.item-left{
+  //  float: left;
+  //}
+  //.item-right{
+  //  float: right;
+  //}
+  .anons{
+    margin-top: 7px;
+    opacity: 0.8;
+    padding-bottom: 2px;
+    margin-left: 4px;
+  }
+  .adress{
+    font-size: 13px;
+    position: absolute;
+    right:20px;
+    bottom: 14px;
+  }
+  .experience{
+    font-size: 13px;
+  }
+
+  button.more{
+    width: 46%;
+    font-size: 12px;
+    font-weight: bold;
+    float: left;
+    margin-left: 3%;
+    margin-bottom: 15px;
+  }
+  button.more:hover{
+    background: #488aff;
+    color:white;
+  }
+
+  button.order{
+    width: 46%;
+    font-size: 11px;
+    font-weight: bold;
+    float: right;
+    margin-right: 3%;
+    opacity: 0.85;
+  }
+  //button.order:hover{
+  //  color:#f53d3d;
+  //  border:1px solid #f53d3d;
+  //}
 }
+

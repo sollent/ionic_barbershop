@@ -9,6 +9,8 @@ import { LoginPage } from "../pages/login/login";
 import { RegistPage } from "../pages/regist/regist";
 import { MainPage } from "../pages/main/main";
 import { AccountPage } from "../pages/account/account";
+import { PublicPage } from "../pages/public/public";
+import { OfferPage } from "../pages/offer/offer";
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,6 +23,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RegistPage,
     MainPage,
     AccountPage,
+      PublicPage,
+      OfferPage,
     TabsPage
   ],
   imports: [
@@ -35,6 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RegistPage,
     MainPage,
     AccountPage,
+      PublicPage,
+      OfferPage,
     TabsPage
   ],
   providers: [

@@ -6,7 +6,40 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
+  <ion-card *ngFor="let offer of Offers">
+    <ion-item (click)="openFullOffer(offer.id)">
+      <ion-avatar item-left>
+        <img src="{{offer.avatar}}" alt="">
+      </ion-avatar>
+      <h2>{{offer.first_name}} {{offer.third_name}}</h2>
+      <p>{{offer.login}}</p>
+    </ion-item>
+
+    
+    <ion-card-content class="anons"><em>{{offer.about.substring(0, 50)}}.....</em></ion-card-content>
+
+    <!--<ion-item class="item-left">-->
+      <!--<p>Опыт работы: 12лет</p>-->
+    <!--</ion-item>-->
+    <!--<ion-item class="item-right">-->
+      <!--<p>{{offer.adress}}</p>-->
+    <!--</ion-item>-->
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <p class="experience">Опыт работы: {{offer.experience}}</p>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <p class="adress">{{offer.adress}}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <button ion-button class="more" outline (click)="openFullOffer(offer.id)">Подробнее</button>
+    <button ion-button class="order" color="danger" (click)="Offer()">Заказать стрижку</button>
 
   </ion-card>
 </ion-content>

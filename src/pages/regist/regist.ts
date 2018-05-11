@@ -50,7 +50,7 @@ export class RegistPage {
     this.login = this.form.value.login;
     this.password = this.form.value.password;
 
-    let valid = [this.first_name, this.last_name, this.third_name, this.experience, this.login, this.password];
+    // let valid = [this.first_name, this.last_name, this.third_name, this.experience, this.login, this.password];
 
     this.post = {
       first_name: this.first_name,

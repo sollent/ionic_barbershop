@@ -25678,8 +25678,78 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-account button.public_offer {
+  margin-top: 10px;
+}
+
+page-account .offers {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
 page-main .login {
   position: absolute;
   top: 10%;
   right: 5%;
+}
+
+page-main .anons {
+  margin-top: 7px;
+  opacity: 0.8;
+  padding-bottom: 2px;
+  margin-left: 4px;
+}
+
+page-main .adress {
+  font-size: 13px;
+  position: absolute;
+  right: 20px;
+  bottom: 14px;
+}
+
+page-main .experience {
+  font-size: 13px;
+}
+
+page-main button.more {
+  width: 46%;
+  font-size: 12px;
+  font-weight: bold;
+  float: left;
+  margin-left: 3%;
+  margin-bottom: 15px;
+}
+
+page-main button.more:hover {
+  background: #488aff;
+  color: white;
+}
+
+page-main button.order {
+  width: 46%;
+  font-size: 11px;
+  font-weight: bold;
+  float: right;
+  margin-right: 3%;
+  opacity: 0.85;
+}
+
+page-offer .fields {
+  font-size: 14px;
+}
+
+page-offer .caption_h2 {
+  font-size: 15px;
+}
+
+page-offer em {
+  display: block;
+  padding-left: 18px;
+  padding-top: 7px;
+}
+
+page-offer .full_offer {
+  margin-top: 20px;
+  margin-bottom: 2px;
 }

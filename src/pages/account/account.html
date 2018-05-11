@@ -14,7 +14,45 @@
 
 
 <ion-content padding>
-  <h3>{{FirstName}}</h3>
-  <h3>{{LastName}}</h3>
-  <h3>{{ThirdName}}</h3>
+  <ion-item>
+    <ion-avatar item-left>
+      <img class="avatar" src="{{Avatar}}" alt="">
+    </ion-avatar>
+    <ion-label>{{Login}}</ion-label>
+  </ion-item>
+  <ion-card>
+    <ion-card-content>Добро пожаловать <b>{{FirstName}} {{ThirdName}}</b> в ваш аккаунт.
+      Здесь вы можете опубликовать свои услуги как парикмахера и вести учет заявок ваших клиентов!</ion-card-content>
+  </ion-card>
+
+  <!--Загрузить аватарку если она не загружена-->
+  <div *ngIf="!cond">
+    <ion-title>Загрузите вашу аватарку</ion-title>
+    <form [formGroup]="form" (ngSubmit)="LoadAvatar()">
+      <ion-item>
+        <ion-label>Ссылка</ion-label>
+        <ion-input type="text" formControlName="avatar"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" color="secondary" class="form_button" full>Сохранить</button>
+    </form>
+  </div>
+
+  <button *ngIf="!publicCond" class="public_offer" ion-button full (click)="openPublicPage(user_id)">Опубликовать свою услугу</button>
+
+  <ion-card *ngIf="publicCond">
+    <ion-card-content style="color:darkgreen; font-weight: bold;">
+      Ваша услуга опубликованна, можете вести учет заказов
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="!publicCond">
+    <ion-card-content>Вы сможете вести учет заявок только после публикации своей услуги</ion-card-content>
+  </ion-card>
+
+    <div *ngIf="publicCond">
+      <ion-item>
+        <ion-label class="offers">Заказы</ion-label>
+      </ion-item>
+    </div>
+
 </ion-content>
