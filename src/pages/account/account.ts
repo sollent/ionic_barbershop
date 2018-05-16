@@ -36,11 +36,14 @@ export class AccountPage {
   OfferInfo:any;
   publicCond:boolean = false;
 
+  OrderData:any;
+  OrderInfo:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private formBuilder: FormBuilder,
               public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
     this.user_id = this.navParams.get("user_id");
     this.loadUserData(this.user_id);
+    this.loadOrders(this.user_id);
 
     this.form = this.formBuilder.group({
         avatar: ['']
@@ -100,6 +103,41 @@ export class AccountPage {
             }
         );
 
+  }
+
+  loadOrders(id){
+      this.http.get("http://test9.superresheba.by/project/Egor/GetOrders.php?id="+id)
+          .map(res => res.json())
+          .subscribe(
+              Arr => {
+                  this.OrderData = Arr;
+
+                  if(Arr.bool=="false"){
+                      this.OrderInfo = Arr.info;
+                      this.OrderData = false;
+                  }
+              }
+          );
+  }
+
+  update(){
+      this.loadUserData(this.user_id);
+      this.loadOrders(this.user_id);
+  }
+
+  ShowPhone(phone){
+      let alert = this.alertCtrl.create({
+          title: phone,
+          buttons: [
+              {
+                  text: 'Позвонить'
+              },
+              {
+                  text: 'Отмена'
+              }
+          ]
+      });
+      alert.present();
   }
 
   openPublicPage(id){

@@ -7,4 +7,21 @@ page-account {
     text-align: center;
     margin-top: 20px;
   }
+  .order_label{
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 8px;
+  }
+  .order_time{
+    padding-left: 10px;
+  }
+  .order_button{
+    margin-top: 15px;
+  }
+  .update_button{
+    position: absolute;
+    right: 30px;
+    top:18px;
+  }
 }

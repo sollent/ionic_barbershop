@@ -76,7 +76,7 @@ export class OfferPage {
           message: 'Пожалуйста, оформите ваш заказ',
           inputs:[
               {
-                  name: 'Name',
+                  name: 'name',
                   placeholder: 'Ваше имя'
               },
               {
@@ -87,9 +87,9 @@ export class OfferPage {
           buttons:[
               {
                   text: 'Оформить',
-                  handler: () => {
-                      //Запрос к серверу на оформление
-
+                  handler: data => {
+                      //Запрос к серверу на оформления
+                      this.SendForm(data.name, data.phone, this.id);
                   }
               },
               {
@@ -98,6 +98,22 @@ export class OfferPage {
           ]
       });
       alert.present();
+  }
+
+  SendForm(name, phone, id){
+      let res;
+      this.http.get("http://test9.superresheba.by/project/Egor/Form.php?name="+name+"&phone="+phone+"&id="+id)
+          .map(res=>res.json())
+          .subscribe(
+              Arr => {
+                  res = Arr;
+                  if(res=="OK"){
+                      console.log("ok");
+                  }else{
+                      console.log("Ошибка, данные не отправлены");
+                  }
+              }
+          );
   }
 
   ionViewDidLoad() {

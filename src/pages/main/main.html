@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Предложения</ion-title>
+    <ion-title style="padding-left: 11px;">Предложения</ion-title>
     <button ion-button class="login" (click)="openLoginPage()">Войти</button>
   </ion-navbar>
 </ion-header>
@@ -39,7 +39,7 @@
     </ion-row>
 
     <button ion-button class="more" outline (click)="openFullOffer(offer.id)">Подробнее</button>
-    <button ion-button class="order" color="danger" (click)="Offer()">Заказать стрижку</button>
+    <button ion-button class="order" color="danger" (click)="Offer(offer.id)">Заказать стрижку</button>
 
   </ion-card>
 </ion-content>

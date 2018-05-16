@@ -20,6 +20,9 @@
     </ion-avatar>
     <ion-label>{{Login}}</ion-label>
   </ion-item>
+  <button ion-button icon-only class="update_button" (click)="update()">
+    <ion-icon name="md-refresh"></ion-icon>
+  </button>
   <ion-card>
     <ion-card-content>Добро пожаловать <b>{{FirstName}} {{ThirdName}}</b> в ваш аккаунт.
       Здесь вы можете опубликовать свои услуги как парикмахера и вести учет заявок ваших клиентов!</ion-card-content>
@@ -53,6 +56,20 @@
       <ion-item>
         <ion-label class="offers">Заказы</ion-label>
       </ion-item>
+
+      <ion-card *ngIf="!OrderData">
+        <ion-card-content>{{OrderInfo}}...</ion-card-content>
+      </ion-card>
+
+          <button *ngFor="let order of OrderData" (click)="ShowPhone(order.phone)" ion-button icon-left class="order_button" full outline color="secondary">
+            <ion-icon name="ios-briefcase"></ion-icon>
+            <ion-label class="order_label">Номер заказа: {{order.id}}</ion-label>
+            <p>{{order.client}}</p>
+            <em class="order_time">14:00</em>
+          </button>
+
+
     </div>
+
 
 </ion-content>

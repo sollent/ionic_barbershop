@@ -25688,6 +25688,27 @@ page-account .offers {
   margin-top: 20px;
 }
 
+page-account .order_label {
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+page-account .order_time {
+  padding-left: 10px;
+}
+
+page-account .order_button {
+  margin-top: 15px;
+}
+
+page-account .update_button {
+  position: absolute;
+  right: 30px;
+  top: 18px;
+}
+
 page-main .login {
   position: absolute;
   top: 10%;
