@@ -32,12 +32,12 @@ export class RegistPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, public http: Http,
               public alertCtrl: AlertController) {
     this.form = this.formBuilder.group({
-      FirstName: [''],
-      LastName: [''],
-      ThirdName: [''],
-      Experience: [''],
-      login: [''],
-      password: [''],
+      FirstName: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
+      LastName: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
+      ThirdName: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
+      Experience: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
+      login: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
     });
   }
 
@@ -62,7 +62,7 @@ export class RegistPage {
     };
 
     let res;
-    this.http.post("http://test9.superresheba.by/project/Egor/RegistUser.php", this.post)
+    this.http.post("http://test9.superresheba.by/project/Egor_Sasha/RegistUser.php", this.post)
       .map(res => res.json())
       .subscribe(
         Arr => {

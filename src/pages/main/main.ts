@@ -41,7 +41,7 @@ export class MainPage {
 
       loading.present();
 
-    this.http.get("http://test9.superresheba.by/project/Egor/GetAllOffers.php")
+    this.http.get("http://test9.superresheba.by/project/Egor_Sasha/GetAllOffers.php")
         .map(res => res.json())
         .subscribe(
             Arr => {
@@ -62,39 +62,63 @@ export class MainPage {
 
 
     Offer(id){
-        let alert = this.alertCtrl.create({
-            message: 'Пожалуйста, оформите ваш заказ',
-            inputs:[
-                {
-                    name: 'name',
-                    placeholder: 'Ваше имя'
-                },
-                {
-                    name:'phone',
-                    placeholder:'Номер телефона'
-                }
-            ],
-            buttons:[
-                {
-                    text: 'Оформить',
-                    handler: data => {
-                        //Запрос к серверу на оформление
-                        this.SendForm(data.name, data.phone, id);
+        let alert = this.alertCtrl.create();
+        alert.setMessage("Пожалуйста, оформите ваш заказ. Время работы 8:00 - 18:30");
+        alert.addInput({
+            name: 'name',
+            placeholder: 'Ваше имя'
+        });
+        alert.addInput({
+            name:'phone',
+            placeholder:'Номер телефона'
+        });
+        alert.addInput({
+            name: 'time',
+            placeholder: 'Введите удобное вам время',
+        });
 
-                    }
-                },
-                {
-                    text: 'Отмена'
-                }
-            ]
+        alert.addButton({
+            text: 'Оформить',
+             handler: data => {
+             //Запрос к серверу на оформление
+            this.SendForm(data.name, data.phone, data.time, id);
+        }});
+        alert.addButton({
+           text: "Отмена"
         });
         alert.present();
     }
 
+// {
+//     message: 'Пожалуйста, оформите ваш заказ',
+//     inputs:[
+//         {
+//             name: 'name',
+//             placeholder: 'Ваше имя'
+//         },
+//         {
+//             name:'phone',
+//             placeholder:'Номер телефона'
+//         },
+//         ],
+//     buttons:[
+//         {
+//             text: 'Оформить',
+//             handler: data => {
+//             //Запрос к серверу на оформление
+//             this.SendForm(data.name, data.phone, id);
+//
+//         }
+// },
+// {
+//     text: 'Отмена'
+// }
+// ]
+// }
 
-    SendForm(name, phone, id){
+    SendForm(name, phone, time, id){
         let res;
-        this.http.get("http://test9.superresheba.by/project/Egor/Form.php?name="+name+"&phone="+phone+"&id="+id)
+        this.http.get("http://test9.superresheba.by/project/Egor_Sasha/Form.php?name="+name+"&phone="+phone+"&time="+time+"&id="+id)
             .map(res=>res.json())
             .subscribe(
                 Arr => {

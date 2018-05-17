@@ -61,7 +61,7 @@ export class AccountPage {
           loading.present();
 
 
-    this.http.get("http://test9.superresheba.by/project/Egor/GetUserInfo.php?user_id="+id)
+    this.http.get("http://test9.superresheba.by/project/Egor_Sasha/GetUserInfo.php?user_id="+id)
       .map(res => res.json())
       .subscribe(
         Arr => {
@@ -92,7 +92,7 @@ export class AccountPage {
   LoadAvatar(){
     this.avatar = this.form.value.avatar;
     let res;
-    this.http.get("http://test9.superresheba.by/project/Egor/LoadAvatar.php?avatar="+this.avatar+"&id="+this.user_id)
+    this.http.get("http://test9.superresheba.by/project/Egor_Sasha/LoadAvatar.php?avatar="+this.avatar+"&id="+this.user_id)
         .map(res => res.json())
         .subscribe(
             Arr => {
@@ -106,7 +106,7 @@ export class AccountPage {
   }
 
   loadOrders(id){
-      this.http.get("http://test9.superresheba.by/project/Egor/GetOrders.php?id="+id)
+      this.http.get("http://test9.superresheba.by/project/Egor_Sasha/GetOrders.php?id="+id)
           .map(res => res.json())
           .subscribe(
               Arr => {

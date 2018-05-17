@@ -38,7 +38,7 @@ export class LoginPage {
     this.password = this.form.value.password;
 
     let error;
-    this.http.get("http://test9.superresheba.by/project/Egor/Login.php?login="+this.login+"&password="+this.password)
+    this.http.get("http://test9.superresheba.by/project/Egor_Sasha/Login.php?login="+this.login+"&password="+this.password)
       .map(res => res.json())
       .subscribe(
         Arr => {

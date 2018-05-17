@@ -45,7 +45,7 @@ export class PublicPage {
     this.time = this.form.value.time;
 
     let res;
-    this.http.get("http://test9.superresheba.by/project/Egor/LoadOffer.php?about="+this.about+"&adress="+this.adress+"&time="+this.time+"&id="+this.user_id)
+    this.http.get("http://test9.superresheba.by/project/Egor_Sasha/LoadOffer.php?about="+this.about+"&adress="+this.adress+"&time="+this.time+"&id="+this.user_id)
         .map(res => res.json())
         .subscribe(
             Arr => {

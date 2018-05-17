@@ -52,7 +52,7 @@ export class OfferPage {
 
       loading.present();
 
-      this.http.get("http://test9.superresheba.by/project/Egor/GetFullOffer.php?id="+id)
+      this.http.get("http://test9.superresheba.by/project/Egor_Sasha/GetFullOffer.php?id="+id)
           .map(res=> res.json())
           .subscribe(
               Arr => {
@@ -102,7 +102,7 @@ export class OfferPage {
 
   SendForm(name, phone, id){
       let res;
-      this.http.get("http://test9.superresheba.by/project/Egor/Form.php?name="+name+"&phone="+phone+"&id="+id)
+      this.http.get("http://test9.superresheba.by/project/Egor_Sasha/Form.php?name="+name+"&phone="+phone+"&id="+id)
           .map(res=>res.json())
           .subscribe(
               Arr => {
